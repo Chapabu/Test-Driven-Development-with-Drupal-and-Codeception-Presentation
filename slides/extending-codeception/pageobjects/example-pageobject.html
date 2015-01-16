@@ -1,0 +1,23 @@
+<h2>Example pageobject</h2>
+
+<pre class="stretch"><code class="php">
+    &lt;?php
+    class LoginPage
+    {
+
+        public static $URL = '/user/login';
+
+        public static $usernameField = '#edit-name';
+
+        public static $passwordField = '#edit-pass';
+
+        protected $acceptanceTester;
+
+
+        public static function route()
+        {
+            return static::$URL;
+        }
+
+    }
+</code></pre>

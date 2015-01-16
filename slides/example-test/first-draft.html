@@ -1,0 +1,28 @@
+<pre class="stretch"><code class="php">
+public function _before(AcceptanceTester $I)
+{
+    $this->faker = Faker::create();
+}
+
+public function an_author_can_create_article_content(AcceptanceTester $I)
+{
+    $I->am('an author');
+    $I->wantTo('create an Article');
+    $I->expect('to be able to create an Article node.');
+
+    $I->amOnPage('/user/login');
+    $I->submitForm('#user-login', ['name' => 'Bill', 'pass' => 'password']);
+    $I->seeElement('body.logged-in');
+    $I->amOnPage('/node/add/article');
+    $I->seeResponseCodeIs('200');
+    $node_title = $this->faker->text(30);
+    $I->submitForm(
+        '#article-node-form',
+        [
+            'title' => $node_title,
+            'body[und][0][value]' => $this->faker->text(400),
+        ]
+    );
+    $I->see($node_title, '#page-title');
+}
+</code></pre>
