@@ -1,0 +1,16 @@
+<h2>StepObject usage</h2>
+
+<pre class="stretch"><code class="php">
+    use AcceptanceTester\UserSteps;
+    ...
+
+        public function an_author_can_create_article_content(UserSteps $I)
+        {
+            ...
+
+            $I->login('Bill', 'password');
+            $I->seeElement('body.logged-in');
+
+            ...
+        }
+</code></pre>

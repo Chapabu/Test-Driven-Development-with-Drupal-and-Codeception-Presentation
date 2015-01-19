@@ -1,0 +1,19 @@
+<h2>PageObject usage</h2>
+
+<pre class="stretch"><code class="php">
+public function an_author_can_create_article_content(AcceptanceTester $I)
+{
+    ...
+
+    $I->amOnPage(LoginPage::$URL);
+    $I->submitForm(LoginPage::$formId,
+        [
+            LoginPage::$usernameField => 'Bill',
+            LoginPage::$passwordField => 'password'
+        ]
+    );
+    $I->seeElement('body.logged-in');
+
+    ...
+}
+</code></pre>

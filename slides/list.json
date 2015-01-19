@@ -33,16 +33,24 @@
         "extending-codeception/pageobjects/pageobjects.html",
         "extending-codeception/pageobjects/what-is-a-pageobject.html",
         "extending-codeception/pageobjects/creating-pageobjects.html",
-        "extending-codeception/pageobjects/example-pageobject.html"
+        "extending-codeception/pageobjects/example-pageobject.html",
+        "extending-codeception/pageobjects/pageobject-usage.html"
     ],
     [
         "extending-codeception/stepobjects/stepobjects.html",
         "extending-codeception/stepobjects/what-is-a-stepobject.html",
         "extending-codeception/stepobjects/creating-stepobjects.html",
-        "extending-codeception/stepobjects/example-stepobject.html"
+        "extending-codeception/stepobjects/example-stepobject.html",
+        "extending-codeception/stepobjects/stepobject-usage.html"
     ],
     [
         "refactoring/refactoring-time.html",
+        "refactoring/how-did-our-test-look.html",
+        "refactoring/we-create-pageobjects-and-stepobjects.html",
         "refactoring/how-does-our-test-look-now.html"
-    ]
+    ],
+    "useful-extensions.html",
+    "possible-alternatives.html",
+    "were-hiring.html",
+    "thank-you.html"
 ]

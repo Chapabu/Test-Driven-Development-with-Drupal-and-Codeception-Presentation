@@ -1,3 +1,27 @@
 <h2>How does our test look now?</h2>
 
-<p>Please change me!</p>
+<pre class="stretch"><code class="php">
+
+use ArticleNode;
+
+    public function an_author_can_create_article_content(AcceptanceTester $I)
+    {
+        $I->am('an author');
+        $I->wantTo('create an Article');
+        $I->expect('to be able to create an Article node.');
+
+        $I->login('Bill', 'password');
+
+        $I->amOnPage(ArticleNode::$nodeAddFormURL);
+        $I->seeResponseCodeIs('200');
+        $node_title = $this->faker->text(30);
+        $I->submitForm(
+            ArticleNode::$nodeFormId,
+            [
+                ArticleNode::$titleEditField => $node_title,
+                ArticleNode::$bodyEditField => $this->faker->text(400),
+            ]
+        );
+        $I->see($node_title, ArticleNode::$pageTitleSelector);
+    }
+</code></pre>

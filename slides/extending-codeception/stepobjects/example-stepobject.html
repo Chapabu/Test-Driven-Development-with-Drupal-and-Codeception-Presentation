@@ -1,22 +1,24 @@
 <h2>Example StepObject</h2>
 <pre class="stretch"><code class="php">
-    &lt;?php
+    ...
 
-    namespace AcceptanceTester;
+    use LoginPage;
 
     class UserSteps extends \AcceptanceTester
     {
         public function login($userName, $userPassword)
         {
             $I = $this;
-            $I->amOnPage('/user/login');
-            $I->submitForm('#user-login', ['name' => $userName, 'pass' => $userPassword]);
+            $I->amOnPage(LoginPage::$URL);
+            $I->submitForm(LoginPage::$formId,
+                [
+                    LoginPage::$usernameField => $userName,
+                    LoginPage::$passwordField => $userPassword
+                ]
+            );
         }
 
-        public function logout()
-        {
-            $I = $this;
-            $I->amOnPage('/user/logout');
-        }
+    ...
+
     }
 </code></pre>
